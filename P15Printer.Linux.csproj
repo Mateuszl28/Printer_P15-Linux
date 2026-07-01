@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <!-- Plain net8.0 (no -windows): runs on Linux. BLE goes through BlueZ/D-Bus. -->
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>P15Printer</AssemblyName>
+    <RootNamespace>P15Printer</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- BLE via BlueZ over D-Bus (Linux only at runtime). -->
+    <PackageReference Include="Linux.Bluetooth" Version="5.66.0" />
+    <!-- Cross-platform image loading / drawing (replaces System.Drawing). -->
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.11" />
+    <PackageReference Include="SixLabors.ImageSharp.Drawing" Version="2.1.6" />
+  </ItemGroup>
+
+</Project>
